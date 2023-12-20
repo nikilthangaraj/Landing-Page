@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon App Landing</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .landing-page {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f15a24;
+            color: #fff;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        .landing-page:nth-child(even) {
+            background-color: #3e232a;
+        }
+
+        .landing-page img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Additional sections with different background colors */
+        .section-1 {
+            background-color: #3498db;
+        }
+
+        .section-2 {
+            background-color: #2ecc71;
+        }
+
+        /* Add more sections as needed */
+
+    </style>
+</head>
+<body>
+
+    <div class="landing-page">
+        <img src="data:image/png;base64,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" alt="Amazon Logo">
+        <h1>Welcome to the Amazon App</h1>
+        <p>Discover a world of shopping at your fingertips.</p>
+        <div class="scroll-down" onclick="scrollToSection('.section-1')">Scroll Down</div>
+    </div>
+
+    <div class="landing-page section-1">
+        <h1>Explore Thousands of Products</h1>
+        <p>From electronics to fashion, find everything you need.</p>
+        <div class="scroll-down" onclick="scrollToSection('.section-2')">Scroll Down</div>
+    </div>
+
+    <div class="landing-page section-2">
+        <h1>Shop with Confidence</h1>
+        <p>Enjoy secure payments and fast delivery on all orders.</p>
+        <!-- Add more content or sections as needed -->
+    </div>
+
+    <!-- Add more sections as needed -->
+
+    <script>
+        function scrollToSection(sectionClass) {
+            const section = document.querySelector(sectionClass);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
+
